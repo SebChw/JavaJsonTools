@@ -4,9 +4,9 @@ import com.fasterxml.jackson.databind.JsonNode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
-import pl.put.poznan.transformer.logic.JsonFormatter;
-import pl.put.poznan.transformer.logic.JsonReader;
-import pl.put.poznan.transformer.logic.JsonReducer;
+import pl.put.poznan.transformer.logic.format.JsonFormatter;
+import pl.put.poznan.transformer.logic.format.JsonReader;
+import pl.put.poznan.transformer.logic.format.JsonReducer;
 
 
 

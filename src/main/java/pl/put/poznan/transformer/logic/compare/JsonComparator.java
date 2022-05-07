@@ -1,4 +1,6 @@
-package pl.put.poznan.transformer.logic;
+package pl.put.poznan.transformer.logic.compare;
+
+import pl.put.poznan.transformer.logic.format.JsonFormatter;
 
 public class JsonComparator implements Comparator{
 
