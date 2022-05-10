@@ -3,6 +3,7 @@ package pl.put.poznan.transformer.rest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
+import pl.put.poznan.transformer.logic.format.JsonExtender;
 import pl.put.poznan.transformer.logic.format.JsonFormatter;
 import pl.put.poznan.transformer.logic.format.JsonReader;
 import pl.put.poznan.transformer.logic.format.JsonReducer;
@@ -22,7 +23,8 @@ public class JsonReducerController {
         logger.debug(text);
         JsonFormatter formatter = new JsonReader(text);
         JsonReducer reducer = new JsonReducer(formatter);
-        JsonBundle jsonBundle = reducer.parse();
+        JsonExtender extender = new JsonExtender(reducer);
+        JsonBundle jsonBundle = extender.parse();
 
         return jsonBundle.getString();
     }

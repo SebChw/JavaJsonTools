@@ -5,6 +5,9 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import pl.put.poznan.transformer.logic.util.JsonBundle;
 
+/**
+ * Extends Json
+ */
 public class JsonExtender extends JsonFormatterDecorator{
 
     public JsonExtender(JsonFormatter json){
