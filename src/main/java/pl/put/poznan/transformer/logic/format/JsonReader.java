@@ -1,8 +1,13 @@
 package pl.put.poznan.transformer.logic.format;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.core.util.DefaultPrettyPrinter;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectWriter;
+
+import java.io.File;
+import java.io.IOException;
 
 public class JsonReader implements JsonFormatter{
     private String toBeFormatted;
@@ -21,6 +26,6 @@ public class JsonReader implements JsonFormatter{
         } catch (JsonProcessingException e) {
             e.printStackTrace();
         }
-        return(jsonNode);
+        return (jsonNode);
     }
 }
