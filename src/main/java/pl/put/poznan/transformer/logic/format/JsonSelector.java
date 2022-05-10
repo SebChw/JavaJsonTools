@@ -1,6 +1,6 @@
 package pl.put.poznan.transformer.logic.format;
 
-import com.fasterxml.jackson.databind.JsonNode;
+import pl.put.poznan.transformer.logic.util.JsonBundle;
 
 import java.util.List;
 
@@ -22,8 +22,8 @@ public class JsonSelector extends JsonFormatterDecorator{
 
     public boolean getReversed(){return(this.reversed);}
 
-    public JsonNode parse(){
-        JsonNode jsonnode_select= this.getWrappee().parse();
+    public JsonBundle parse(){
+        JsonBundle jsonnode_select= this.getWrappee().parse();
         if (this.getReversed()){
             /*Modify here jsonnode_select to select only keys of this.getListKeys()*/
             return(jsonnode_select);

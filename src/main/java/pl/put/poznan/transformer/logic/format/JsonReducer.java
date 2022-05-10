@@ -3,6 +3,11 @@ package pl.put.poznan.transformer.logic.format;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import pl.put.poznan.transformer.logic.util.JsonBundle;
+
+/**
+ * Reduces Json
+ */
 
 public class JsonReducer extends JsonFormatterDecorator{
 
@@ -14,12 +19,14 @@ public class JsonReducer extends JsonFormatterDecorator{
         return(this.wrappee);
     }
 
-    public JsonNode parse() {
-        JsonNode jsonNode = this.getWrappee().parse();
-        return(jsonNode);
-    }
+    /**
+     * Reduces string from jsonBundle
+     * @return jsonBundle
+     */
+    public JsonBundle parse() {
+        JsonBundle jsonBundle = this.getWrappee().parse();
+        JsonNode jsonNode = jsonBundle.getJsonNode();
 
-    public String reduce(JsonNode jsonNode){
         ObjectMapper objectMapper = new ObjectMapper();
         String reduced = null;
         try {
@@ -27,6 +34,8 @@ public class JsonReducer extends JsonFormatterDecorator{
         } catch (JsonProcessingException e) {
             e.printStackTrace();
         }
-        return(reduced);
+        jsonBundle.setString(reduced);
+        return(jsonBundle);
     }
+
 }

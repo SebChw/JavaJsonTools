@@ -1,7 +1,7 @@
 package pl.put.poznan.transformer.logic.format;
 
-import com.fasterxml.jackson.databind.JsonNode;
+import pl.put.poznan.transformer.logic.util.JsonBundle;
 
 public interface JsonFormatter {
-    public JsonNode parse();
+    public JsonBundle parse();
 }

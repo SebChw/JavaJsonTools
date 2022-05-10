@@ -3,6 +3,7 @@ package pl.put.poznan.transformer.logic.format;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import pl.put.poznan.transformer.logic.util.JsonBundle;
 
 public class JsonExtender extends JsonFormatterDecorator{
 
@@ -14,8 +15,8 @@ public class JsonExtender extends JsonFormatterDecorator{
         return(this.wrappee);
     }
 
-    public JsonNode parse() {
-        JsonNode jsonnode_extended= this.getWrappee().parse();
+    public JsonBundle parse() {
+        JsonBundle jsonnode_extended= this.getWrappee().parse();
         /*Modify here jsonnode_extended to extend it*/
         return(jsonnode_extended);
     }
