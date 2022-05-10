@@ -16,12 +16,9 @@ public class JsonExtender extends JsonFormatterDecorator{
     }
 
     public JsonBundle parse() {
-        JsonBundle jsonnode_extended= this.getWrappee().parse();
-        /*Modify here jsonnode_extended to extend it*/
-        return(jsonnode_extended);
-    }
+        JsonBundle jsonBundle = this.getWrappee().parse();
+        JsonNode jsonNode = jsonBundle.getJsonNode();
 
-    public String extend(JsonNode jsonNode){
         ObjectMapper objectMapper = new ObjectMapper();
         String extended = null;
         try {
@@ -29,6 +26,7 @@ public class JsonExtender extends JsonFormatterDecorator{
         } catch (JsonProcessingException e) {
             e.printStackTrace();
         }
-        return(extended);
+        jsonBundle.setString(extended);
+        return(jsonBundle);
     }
 }
