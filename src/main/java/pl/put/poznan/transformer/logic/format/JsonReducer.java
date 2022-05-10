@@ -5,7 +5,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 public class JsonReducer extends JsonFormatterDecorator{
 
     public JsonReducer(JsonFormatter json){
-        this.wrappee=json;
+        super(json);
     }
 
     public JsonFormatter getWrappee(){

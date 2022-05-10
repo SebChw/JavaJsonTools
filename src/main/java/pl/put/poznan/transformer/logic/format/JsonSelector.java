@@ -9,7 +9,7 @@ public class JsonSelector extends JsonFormatterDecorator{
     private boolean reversed;
 
     public JsonSelector(JsonFormatter json, List<String> listKeys, boolean reversed){
-        this.wrappee=json;
+        super(json);
         this.listKeys=listKeys;
         this.reversed=reversed;
     }
