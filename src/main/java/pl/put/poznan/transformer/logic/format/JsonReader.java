@@ -6,28 +6,17 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import pl.put.poznan.transformer.logic.util.JsonBundle;
 
 public class JsonReader implements JsonFormatter{
-    private String toBeFormatted;
+    private JsonNode toBeFormatted;
 
-    public JsonReader(String text){this.toBeFormatted=text;}
-
-    public String getToBeFormatted() {
-        return this.toBeFormatted;
-    }
+    public JsonReader(JsonNode json){this.toBeFormatted=json;}
 
     /**
-     * Parses string to Json and creates bundle
+     * Creates an initial json bundle
      * @return
      */
     public JsonBundle parse(){
-        ObjectMapper objectMapper = new ObjectMapper();
-        JsonNode jsonNode = null;
-        try {
-            jsonNode = objectMapper.readTree(toBeFormatted);
-        } catch (JsonProcessingException e) {
-            e.printStackTrace();
-        }
-        JsonBundle bundle = new JsonBundle(jsonNode, toBeFormatted);
+        JsonBundle bundle = new JsonBundle(toBeFormatted);
 
-        return (bundle);
+        return bundle;
     }
 }

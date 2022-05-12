@@ -24,7 +24,7 @@ public class JsonSelector extends JsonFormatterDecorator{
 
     public JsonBundle parse(){
         JsonBundle jsonnode_select= this.getWrappee().parse();
-        if (this.getReversed()){
+        if (reversed){
             /*Modify here jsonnode_select to select only keys of this.getListKeys()*/
             return(jsonnode_select);
         }

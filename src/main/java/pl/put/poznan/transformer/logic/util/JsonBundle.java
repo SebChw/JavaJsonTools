@@ -10,9 +10,8 @@ public class JsonBundle {
     private JsonNode jsonNode;
     private String string;
 
-    public JsonBundle(JsonNode jsonNode, String string){
+    public JsonBundle(JsonNode jsonNode){
         this.jsonNode = jsonNode;
-        this.string = string;
     }
 
     public String getString() {
