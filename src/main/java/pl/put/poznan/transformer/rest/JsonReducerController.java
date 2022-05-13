@@ -83,14 +83,17 @@ public class JsonReducerController {
 
     @RequestMapping(value="/transform/{transforms}", method = RequestMethod.POST, produces = "application/json")
     public String post(@PathVariable String transforms,
-                       @RequestBody JsonNode json) {
+                       @RequestBody JsonNode json,
+                       @RequestParam(value = "keys", defaultValue = "null") String keys,
+                       @RequestParam(value = "reversed", defaultValue = "false") boolean reversed) {
         // log the parameters
         System.out.println(json);
         logger.debug(transforms);
 
         List<String> transformsList = new ArrayList<String>(Arrays.asList(transforms.split(",")));
+        List<String> keysList = new ArrayList<String>(Arrays.asList(keys.split(",")));
 
-        JsonFormatter formatter = decoratorWrapper.formatterFromList(new JsonReader(json), transformsList);
+        JsonFormatter formatter = decoratorWrapper.formatterFromList(new JsonReader(json), transformsList, keysList, reversed);
         JsonBundle jsonBundle = formatter.parse();
 
         return jsonBundle.getString();

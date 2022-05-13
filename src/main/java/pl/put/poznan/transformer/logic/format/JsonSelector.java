@@ -1,7 +1,15 @@
 package pl.put.poznan.transformer.logic.format;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.node.ObjectNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import pl.put.poznan.transformer.logic.util.JsonBundle;
 
+
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class JsonSelector extends JsonFormatterDecorator{
@@ -23,14 +31,20 @@ public class JsonSelector extends JsonFormatterDecorator{
     public boolean getReversed(){return(this.reversed);}
 
     public JsonBundle parse(){
-        JsonBundle jsonnode_select= this.getWrappee().parse();
-        if (reversed){
-            /*Modify here jsonnode_select to select only keys of this.getListKeys()*/
-            return(jsonnode_select);
+        JsonBundle jsonBundle= this.getWrappee().parse();
+        JsonNode jsonNode = jsonBundle.getJsonNode();
+
+        if (!reversed && !listKeys.get(0).equals("null")){
+            List<String> allKeys = new ArrayList<>();
+            Iterator<String> iterator = jsonNode.fieldNames();
+            iterator.forEachRemaining(e -> allKeys.add(e));
+            allKeys.removeAll(listKeys);
+            listKeys = allKeys;
         }
-        else{
-            /*Modify here jsonnode_select to remove keys of this.getListKeys()*/
-            return(jsonnode_select);
-        }
+
+        ((ObjectNode) jsonNode).remove(listKeys);
+
+        jsonBundle.setJsonNode(jsonNode);
+        return(jsonBundle);
     }
 }
