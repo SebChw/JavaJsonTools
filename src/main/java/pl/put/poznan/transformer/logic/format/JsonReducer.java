@@ -6,7 +6,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import pl.put.poznan.transformer.logic.util.JsonBundle;
 
 /**
- * Reduces Json
+ * Reduces JsonNode to one line.
  */
 
 public class JsonReducer extends JsonFormatterDecorator{
@@ -20,8 +20,9 @@ public class JsonReducer extends JsonFormatterDecorator{
     }
 
     /**
-     * Reduces string from jsonBundle
-     * @return jsonBundle
+     * Reduces string from jsonBundle.
+     *
+     * @return jsonBundle with Json in one line
      */
     public JsonBundle parse() {
         JsonBundle jsonBundle = this.getWrappee().parse();

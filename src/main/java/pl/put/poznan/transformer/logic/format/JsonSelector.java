@@ -12,10 +12,21 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+/**
+ * Selects given keys from a JsonNode or
+ * selects all but given keys if
+ * reversed equals true.
+ */
 public class JsonSelector extends JsonFormatterDecorator{
     private List<String> listKeys;
     private boolean reversed;
 
+    /**
+     *
+     * @param json formatter
+     * @param listKeys keys to be selected
+     * @param reversed the selection flag, if true all but listKeys is returned
+     */
     public JsonSelector(JsonFormatter json, List<String> listKeys, boolean reversed){
         super(json);
         this.listKeys=listKeys;
@@ -30,6 +41,12 @@ public class JsonSelector extends JsonFormatterDecorator{
 
     public boolean getReversed(){return(this.reversed);}
 
+    /**
+     * Removes given keys from bundle's JsonNode.
+     * If reversed is false, only listKeys are selected.
+     * Else all other keys but listKeys are retained.
+     * @return bundle with filtered keys
+     */
     public JsonBundle parse(){
         JsonBundle jsonBundle= this.getWrappee().parse();
         JsonNode jsonNode = jsonBundle.getJsonNode();

@@ -6,7 +6,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import pl.put.poznan.transformer.logic.util.JsonBundle;
 
 /**
- * Extends Json
+ * Extends Json to pretty-print it.
  */
 public class JsonExtender extends JsonFormatterDecorator{
 
@@ -18,6 +18,12 @@ public class JsonExtender extends JsonFormatterDecorator{
         return(this.wrappee);
     }
 
+    /**
+     * Extends jsonNode and updates the bundle's string
+     * with the extended one.
+     *
+     * @return the bundle with pretty-printed string
+     */
     public JsonBundle parse() {
         JsonBundle jsonBundle = this.getWrappee().parse();
         JsonNode jsonNode = jsonBundle.getJsonNode();

@@ -3,7 +3,7 @@ package pl.put.poznan.transformer.logic.util;
 import com.fasterxml.jackson.databind.JsonNode;
 
 /**
- * Combines JSON node with a String
+ * Combines JSON Node with a String
  */
 
 public class JsonBundle {
