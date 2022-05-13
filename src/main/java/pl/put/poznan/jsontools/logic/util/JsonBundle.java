@@ -1,9 +1,9 @@
-package pl.put.poznan.transformer.logic.util;
+package pl.put.poznan.jsontools.logic.util;
 
 import com.fasterxml.jackson.databind.JsonNode;
 
 /**
- * Combines JSON Node with a String
+ * Combines JSON Node with a String.
  */
 
 public class JsonBundle {

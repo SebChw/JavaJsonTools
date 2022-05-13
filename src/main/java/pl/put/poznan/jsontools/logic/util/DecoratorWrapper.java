@@ -1,6 +1,6 @@
-package pl.put.poznan.transformer.logic.util;
+package pl.put.poznan.jsontools.logic.util;
 
-import pl.put.poznan.transformer.logic.format.*;
+import pl.put.poznan.jsontools.logic.format.*;
 
 import java.util.List;
 
