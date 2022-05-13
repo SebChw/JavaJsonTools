@@ -14,6 +14,7 @@ public class JsonReader implements JsonFormatter{
 
     /**
      * Creates an initial json bundle.
+     * The bundle is made of a JsonNode and a Json string.
      * @return JsonBundle to be further processed by decorators
      */
     public JsonBundle parse(){
