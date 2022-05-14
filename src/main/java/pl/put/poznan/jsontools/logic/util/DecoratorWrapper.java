@@ -42,7 +42,8 @@ public class DecoratorWrapper {
      */
         public JsonFormatter formatterFromList(JsonFormatter baseFormatter, List<String> transforms, List<String> keys, boolean reversed){
 
-            if (!transforms.contains("reduce") && !transforms.contains("extend")){
+            if (!transforms.get(transforms.size()-1).equals("reduce") &&
+                    !transforms.get(transforms.size()-1).equals("extend")){
                 transforms.add("extend");
             }
 
