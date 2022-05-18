@@ -4,6 +4,9 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
+import pl.put.poznan.jsontools.logic.format.JsonFormatter;
+import pl.put.poznan.jsontools.logic.format.JsonReader;
+import pl.put.poznan.jsontools.logic.format.JsonReducer;
 
 import static org.junit.jupiter.api.Assertions.*;
 

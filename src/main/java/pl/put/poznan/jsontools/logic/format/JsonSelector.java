@@ -49,15 +49,18 @@ public class JsonSelector extends JsonFormatterDecorator{
         JsonBundle jsonBundle= this.getWrappee().parse();
         JsonNode jsonNode = jsonBundle.getJsonNode();
 
-        if (!reversed && !listKeys.get(0).equals("null")){
+
+        if (!reversed && !listKeys.isEmpty()){
             List<String> allKeys = new ArrayList<>();
             Iterator<String> iterator = jsonNode.fieldNames();
             iterator.forEachRemaining(e -> allKeys.add(e));
             allKeys.removeAll(listKeys);
-            listKeys = allKeys;
+            ((ObjectNode) jsonNode).remove(allKeys);
+        } else{
+            ((ObjectNode) jsonNode).remove(listKeys);
         }
 
-        ((ObjectNode) jsonNode).remove(listKeys);
+
 
         jsonBundle.setJsonNode(jsonNode);
         return(jsonBundle);
