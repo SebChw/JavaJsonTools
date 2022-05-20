@@ -26,7 +26,7 @@ class JsonExtenderTest {
         JsonFormatter formatter = new JsonReader(json);
         JsonExtender extender = new JsonExtender(formatter);
         System.out.println(extender.parse());
-        assertEquals(extender.parse().getString(), output);
+        assertTrue(extender.parse().getString().equals(output));
         assertNotEquals(extender.parse().getString(),text);
         assertNotEquals(extender.parse().getString(),"{\"title\"\n:\"Thinking in Java\",\"isbn\":\"978-0131872486\",\"year\":1998,\"authors\":[\"Bruce Eckel\"]}");
     }
