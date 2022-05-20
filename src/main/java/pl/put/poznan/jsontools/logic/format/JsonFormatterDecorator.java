@@ -6,6 +6,9 @@ package pl.put.poznan.jsontools.logic.format;
 
 public abstract class JsonFormatterDecorator implements JsonFormatter{
 
+    /**
+     * Decorator's JsonFormatter wrappee
+     */
     protected JsonFormatter wrappee;
 
     public JsonFormatterDecorator(JsonFormatter json){

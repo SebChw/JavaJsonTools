@@ -7,5 +7,9 @@ import pl.put.poznan.jsontools.logic.util.JsonBundle;
  */
 
 public interface JsonFormatter {
+    /**
+     * Parses Json
+     * @return bundle of combined Json and string
+     */
     public JsonBundle parse();
 }

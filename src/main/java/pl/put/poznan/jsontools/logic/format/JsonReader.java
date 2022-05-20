@@ -8,6 +8,9 @@ import pl.put.poznan.jsontools.logic.util.JsonBundle;
  */
 
 public class JsonReader implements JsonFormatter{
+    /**
+     * A JsonNode to be further processed and formatted
+     */
     private JsonNode toBeFormatted;
 
     public JsonReader(JsonNode json){this.toBeFormatted=json;}

@@ -11,7 +11,7 @@ import java.util.List;
 
 public class DecoratorWrapper {
     /**
-     * Adds proper Json decorator to a Json formatter
+     * Adds proper Json decorator to a Json formatter.
      *
      * @param decorated Json formatter to be decorated
      * @param transform transformation to be applied

@@ -6,7 +6,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import pl.put.poznan.jsontools.logic.util.JsonBundle;
 
 /**
- * Reduces JsonNode to one line.
+ * Reduces JsonNode to one line. Deletes unnecessary spaces.
  */
 
 public class JsonReducer extends JsonFormatterDecorator{
