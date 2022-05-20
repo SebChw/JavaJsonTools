@@ -16,12 +16,7 @@ class JsonSelectorTest {
 
     @Test
     public void Testparse() throws JsonProcessingException {
-        String text= "{\n" +
-                "  \"title\" : \"Thinking in Java\",\n" +
-                "  \"isbn\" : \"978-0131872486\",\n" +
-                "  \"year\" : 1998,\n" +
-                "  \"authors\" : [ \"Bruce Eckel\" ]\n" +
-                "}";
+        String text = "{\"title\":\"Thinking in Java\",\"isbn\":\"978-0131872486\",\"year\":1998,\"authors\":[\"Bruce Eckel\"]}";
         String output = "{\n" +
                 "  \"title\" : \"Thinking in Java\",\n" +
                 "  \"year\" : 1998\n" +
