@@ -19,6 +19,13 @@
         <java.version>11</java.version>
     </properties>
 
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub Packages</name>
+            <url>https://maven.pkg.github.com/SebChw/JavaJsonTools</url>
+        </repository>
+    </distributionManagement>
     
     <dependencies>
         <dependency>
