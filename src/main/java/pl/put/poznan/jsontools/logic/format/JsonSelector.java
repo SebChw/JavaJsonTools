@@ -16,11 +16,17 @@ import java.util.List;
  * reversed equals true.
  */
 public class JsonSelector extends JsonFormatterDecorator{
+    /**
+     * Keys to be selected/dropped
+     */
     private List<String> listKeys;
+    /**
+     * Selection/dropping flag
+     */
     private boolean reversed;
 
     /**
-     *
+     * Class constructor with keys and reversed flag
      * @param json formatter
      * @param listKeys keys to be selected
      * @param reversed the selection flag, if true all but listKeys is returned

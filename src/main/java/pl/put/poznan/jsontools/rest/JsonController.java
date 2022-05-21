@@ -30,8 +30,8 @@ public class JsonController {
      *
      * Obtains Json from HTTP POST request and processes it according
      * to user's parameters. Json file is mandatory.
+     * If a bad Json, throws an exception.
      * By default, returns an extended string.
-     *
      *
      *
      * @param transforms list of transformations to be applied
