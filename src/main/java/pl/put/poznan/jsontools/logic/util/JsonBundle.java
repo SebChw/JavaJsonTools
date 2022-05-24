@@ -9,6 +9,8 @@ import com.fasterxml.jackson.databind.JsonNode;
 public class JsonBundle {
     private JsonNode jsonNode;
     private String string;
+    private String yaml=null;
+    private String xml = null;
 
     public JsonBundle(JsonNode jsonNode){
         this.jsonNode = jsonNode;
@@ -28,5 +30,21 @@ public class JsonBundle {
 
     public void setJsonNode(JsonNode jsonNode) {
         this.jsonNode = jsonNode;
+    }
+
+    public String getYaml() {
+        return yaml;
+    }
+
+    public void setYaml(String yaml) {
+        this.yaml = yaml;
+    }
+
+    public String getXml() {
+        return xml;
+    }
+
+    public void setXml(String xml) {
+        this.xml = xml;
     }
 }

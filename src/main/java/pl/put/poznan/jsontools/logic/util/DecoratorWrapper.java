@@ -29,6 +29,10 @@ public class DecoratorWrapper {
                 return new JsonSelector(decorated, keys, reversed);
             }
 
+            if (transform.equals("yaml")){
+                return new JsonYamlConverter(decorated);
+            }
+
             return new JsonExtender(decorated);
         }
 
@@ -43,7 +47,8 @@ public class DecoratorWrapper {
         public JsonFormatter formatterFromList(JsonFormatter baseFormatter, List<String> transforms, List<String> keys, boolean reversed){
 
             if (!transforms.get(transforms.size()-1).equals("reduce") &&
-                    !transforms.get(transforms.size()-1).equals("extend")){
+                    !transforms.get(transforms.size()-1).equals("extend") &&
+            !transforms.contains("yaml")){
                 transforms.add("extend");
             }
 
