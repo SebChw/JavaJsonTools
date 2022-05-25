@@ -32,6 +32,9 @@ public class DecoratorWrapper {
             if (transform.equals("yaml")){
                 return new JsonYamlConverter(decorated);
             }
+            if (transform.equals("xml")){
+                return new JsonXmlConverter(decorated);
+            }
 
             return new JsonExtender(decorated);
         }
@@ -48,7 +51,8 @@ public class DecoratorWrapper {
 
             if (!transforms.get(transforms.size()-1).equals("reduce") &&
                     !transforms.get(transforms.size()-1).equals("extend") &&
-            !transforms.contains("yaml")){
+            !transforms.contains("yaml") &&
+                    !transforms.contains("xml")){
                 transforms.add("extend");
             }
 
