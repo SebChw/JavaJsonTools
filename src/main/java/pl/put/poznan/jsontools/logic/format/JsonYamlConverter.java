@@ -5,6 +5,10 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.dataformat.yaml.YAMLMapper;
 import pl.put.poznan.jsontools.logic.util.JsonBundle;
 
+/**
+ * Converts JSON to YAML format.
+ */
+
 public class JsonYamlConverter extends JsonFormatterDecorator{
 
     public JsonYamlConverter(JsonFormatter json){
@@ -16,9 +20,9 @@ public class JsonYamlConverter extends JsonFormatterDecorator{
     }
 
     /**
-     * Reduces string from jsonBundle.
+     * Converts JsonNode to a YAML string.
      *
-     * @return jsonBundle with Json in one line
+     * @return jsonBundle with string containing Json converted to YAML
      */
     public JsonBundle parse() {
         JsonBundle jsonBundle = this.getWrappee().parse();
