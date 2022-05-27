@@ -44,7 +44,7 @@ public class JsonController {
      * @see DecoratorWrapper#formatterFromList(JsonFormatter, List, List, boolean)
      */
     @RequestMapping(value="/transform/{transforms}", method = RequestMethod.POST, produces = "application/json")
-    public String post(@PathVariable String transforms,
+    public String postTransform(@PathVariable String transforms,
                        @RequestBody JsonNode json,
                        @RequestParam(value = "keys", defaultValue = "null") String keys,
                        @RequestParam(value = "reversed", defaultValue = "false") boolean reversed) {
@@ -68,7 +68,7 @@ public class JsonController {
     }
 
     @RequestMapping(value="/compare", method = RequestMethod.POST, produces = "application/json")
-    public String post1(@RequestBody JsonNode json) throws JsonProcessingException {
+    public String postCompare(@RequestBody JsonNode json) throws JsonProcessingException {
 
         //Check if Json is correct
         if (json.isEmpty()) {
