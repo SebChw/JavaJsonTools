@@ -22,13 +22,16 @@ Spreadsheet with Backlog: https://docs.google.com/spreadsheets/d/1z-Drdxqd3L3KFI
 * extend JSON
 * select given keys
 * select all but given keys (reversed parameter set to true)
+* compare two JSON files
+* convert JSON to YAML
+* convert JSON to XML
 
 ## API Quickstart
 
 Create your requests using the *transform* endpoint.
 Parameters:
 * *json* - mandatory, json to be manipulated
-* *transforms* - list of manipulations to be applied (reduce, extend, select). Extend by default.
+* *transforms* - list of manipulations to be applied (reduce, extend, select, yaml, xml). Extend by default.
 * *keys* - keys to be seleced/dropped
 * *reversed* - boolean flag for selection/dropping
 
